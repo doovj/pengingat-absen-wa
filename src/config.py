@@ -1,0 +1,1 @@
+CHROME_PROFILE_PATH = "user-data-dir=chromedriver/Users/asyaky/Library/Application Support/Google/Chrome/disperkim"
