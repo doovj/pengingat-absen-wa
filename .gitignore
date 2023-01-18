@@ -5,3 +5,6 @@
 /src/kontak.txt
 /src/backup_kontak.txt
 /src/custom.py
+
+# misc
+.DS_Store
