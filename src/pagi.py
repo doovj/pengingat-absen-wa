@@ -93,7 +93,7 @@ for kontak in kontaks:
         input_xpath = '//div[@contenteditable="true"][@data-testid="conversation-compose-box-input"]'
         input_box = browser.find_element(By.XPATH, input_xpath)
 
-        msgTidakDitemukan = "Kontak " + kontak + "tidak ditemukan"
+        msgTidakDitemukan = "Kontak " + kontak + " tidak ditemukan"
 
         pyperclip.copy(msgTidakDitemukan)
         input_box.send_keys(Keys.SHIFT, Keys.INSERT)
