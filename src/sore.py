@@ -28,18 +28,18 @@ s = Service('/Users/asyaky/chromedriver/chromedriver')
 browser = webdriver.Chrome(service=s, options=options)
 browser.maximize_window()
 browser.get('https://web.whatsapp.com/')
-search_xpath = '//div[@contenteditable="true"][@data-testid="chat-list-search"]'
-search_box = WebDriverWait(browser, 500).until(
-    EC.presence_of_element_located((By.XPATH, search_xpath))
-)
-time.sleep(3)
-browser.quit()
-time.sleep(15)
+# search_xpath = '//div[@contenteditable="true"][@data-testid="chat-list-search"]'
+# search_box = WebDriverWait(browser, 500).until(
+#     EC.presence_of_element_located((By.XPATH, search_xpath))
+# )
+# time.sleep(5)
+# browser.quit()
+# time.sleep(15)
 
-s = Service('/Users/asyaky/chromedriver/chromedriver')
-browser = webdriver.Chrome(service=s, options=options)
-browser.maximize_window()
-browser.get('https://web.whatsapp.com/')
+# s = Service('/Users/asyaky/chromedriver/chromedriver')
+# browser = webdriver.Chrome(service=s, options=options)
+# browser.maximize_window()
+# browser.get('https://web.whatsapp.com/')
 
 jumlah = 0
 admin = "Muhammad Sidik Asyaky"
@@ -58,7 +58,8 @@ for kontak in kontaks:
 
     time.sleep(1)
 
-    search_box.clear()
+    # search_box.clear()
+    search_box.send_keys(Keys.COMMAND,"a", Keys.DELETE)
 
     pyperclip.copy(kontak)
 
@@ -74,13 +75,12 @@ for kontak in kontaks:
 
     except NoSuchElementException:
         # Kirim kontak yang tidak terdaftar ke admin
-        search_xpath = '//div[@contenteditable="true"][@data-testid="chat-list-search"]'
-
         search_box = WebDriverWait(browser, 500).until(
             EC.presence_of_element_located((By.XPATH, search_xpath))
         )
 
-        search_box.clear()
+        # search_box.clear()
+        search_box.send_keys(Keys.COMMAND,"a", Keys.DELETE)
 
         pyperclip.copy(admin)
 
@@ -128,7 +128,8 @@ search_box = WebDriverWait(browser, 500).until(
     EC.presence_of_element_located((By.XPATH, search_xpath))
 )
 
-search_box.clear()
+# search_box.clear()
+search_box.send_keys(Keys.COMMAND,"a", Keys.DELETE)
 
 pyperclip.copy(admin)
 
