@@ -28,11 +28,11 @@ s = Service('/Users/asyaky/chromedriver/chromedriver')
 browser = webdriver.Chrome(service=s, options=options)
 browser.maximize_window()
 browser.get('https://web.whatsapp.com/')
-# search_xpath = '//div[@contenteditable="true"][@data-testid="chat-list-search"]'
-# search_box = WebDriverWait(browser, 500).until(
-#     EC.presence_of_element_located((By.XPATH, search_xpath))
-# )
-# time.sleep(5)
+search_xpath = '//div[@contenteditable="true"][@data-testid="chat-list-search"]'
+search_box = WebDriverWait(browser, 500).until(
+    EC.presence_of_element_located((By.XPATH, search_xpath))
+)
+time.sleep(3)
 # browser.quit()
 # time.sleep(15)
 
